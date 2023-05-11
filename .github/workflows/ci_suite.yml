@@ -10,9 +10,9 @@ jobs:
   run_linters:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     name: Run Linters
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Restore SpacemanDMM cache
         uses: actions/cache@v3
         with:
@@ -149,7 +149,7 @@ jobs:
     name: Compare Screenshot Tests
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # If we ever add more artifacts, this is going to break, but it'll be obvious.
       - name: Download screenshot tests
         uses: actions/download-artifact@v3
